@@ -11,7 +11,7 @@ function bd_taka_format( $amount = 0 )
 {
 	$tmp 		= explode( ".", $amount ); // for float or double values
 	$strMoney 	= "";
-	$isNegetive = false;
+	$is_negetive = false;
 	if ( $amount < 0 ) {
 	    $amount 		= substr( $tmp[0], 1 );
 	    $is_negetive 	= true;
