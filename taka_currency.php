@@ -2,10 +2,10 @@
 
 echo bd_taka_format(123456789.52); // Output 12,34,56,789.52
 echo bd_taka_format(-123456789.52); // Output -12,34,56,789.52
-echo bd_taka_format(789.52); // Output -12,34,56,789.52
-echo bd_taka_format(-789.52); // Output -12,34,56,789.52
-echo bd_taka_format(-1209.52); // Output -12,34,56,789.52
-echo bd_taka_format(-12009.58); // Output -12,34,56,789.58
+echo bd_taka_format(789.52); // Output 789.52
+echo bd_taka_format(-789.52); // Output -789.52
+echo bd_taka_format(-1209.52); // Output -1,200.52
+echo bd_taka_format(-12009.58); // Output -12,009.58
 
 function bd_taka_format( $amount = 0 )
 {
