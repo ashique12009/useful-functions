@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Fetch data by js</title>
+    </head>
+<body>
+    <h1>Fetching data...</h1>
+    <script>
+        //var ul = document.getElementById('authors'); // Get the list where we will place our authors
+        var url = 'https://randomuser.me/api/?results=10';
+
+        fetch(url)
+        .then(function(data) {
+            // Here you get the data to modify as you please
+            console.log(data);
+            })
+        })
+        .catch(function(error) {
+            // If there is any error you will catch them here
+            console.log(error);
+        }); 
+    </script>
+</body>
+</html>
