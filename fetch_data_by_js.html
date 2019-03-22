@@ -4,20 +4,35 @@
     </head>
 <body>
     <h1>Fetching data...</h1>
-    <script>
-        //var ul = document.getElementById('authors'); // Get the list where we will place our authors
-        var url = 'https://randomuser.me/api/?results=10';
+    <ul id="top-ten-list">
 
-        fetch(url)
-        .then(function(data) {
-            // Here you get the data to modify as you please
-            console.log(data);
-            })
+    </ul>
+    <script>
+        // Data can be fetch by xmlhttprequset object way but this fetch is the modern way
+        //var ul = document.getElementById('authors'); // Get the list where we will place our authors
+        var apiKey = '6565c6c34f984cd28e9ca44784539443';
+        var url = 'https://newsapi.org/v2/everything?q=bitcoin&from=2019-02-22&sortBy=publishedAt&apiKey=' + apiKey;
+        var take = 10;
+
+        fetch(
+            url,
+            { method: 'GET' }
+        )
+        .then( function(response) {
+            return response.json();
         })
-        .catch(function(error) {
-            // If there is any error you will catch them here
-            console.log(error);
-        }); 
+        .then( function(json) {
+            let fetchedData = json.articles;
+            let topTen = fetchedData.slice(0, take);
+            console.log(topTen);
+            for ( let item in topTen ) {
+                let ul = document.getElementById("top-ten-list");
+                let li = document.createElement("li");
+                li.appendChild(document.createTextNode(topTen[item].title));
+                ul.appendChild(li);
+            }
+        })
+        .catch( error => console.error('error:', error) );
     </script>
 </body>
 </html>
