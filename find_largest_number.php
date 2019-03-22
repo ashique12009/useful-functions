@@ -1,7 +1,7 @@
 <?php 
 
 // Given array with values
-$given_array = array(50, 1, 11, 12, 500);
+$given_array = array(50, 1, 55, 12, 500);
 // Assume first element is the largest number
 $largest_number = $given_array[0];
 
